@@ -2,6 +2,7 @@
 # Función que realiza las tareas pertinentes.
 function ailinux(){
   # Variables.
+  proc=9
   s_null="/dev/null"
   current_user=$(whoami)
   # Texto de introducción.
@@ -13,18 +14,22 @@ function ailinux(){
   echo
   echo "[Realizando tareas, espere un momento por favor...]"
   echo
-  # Tareas.
-  add-apt-repository -y ppa:tualatrix/ppa
-  apt-get update > $s_null #
-  apt-get upgrade -y > $s_null #
-  apt install ubuntu-restricted-extras -y > $s_null #
-  apt install rar unace p7zip-full p7zip-rar sharutils mpack arj > $s_null #
-  apt install synaptic > $s_null #
-  apt install aptitude > $s_null #
-  apt install ubuntu-tweak > $s_null #
-  # Indicamos al usuario que hemos finalizado las tareas.
+  echo "Procesos restantes: "$proc
   echo
+  # Tareas.
+  add-apt-repository -y ppa:tualatrix/ppa &> $s_null #
+  proc=$proc-1
+  apt-get update &> $s_null #
+  apt-get upgrade -y &> $s_null #
+  apt install ubuntu-restricted-extras -y &> $s_null #
+  apt install rar unace p7zip-full p7zip-rar sharutils mpack arj &> $s_null #
+  apt install synaptic &> $s_null #
+  apt install aptitude &> $s_null #
+  apt install ubuntu-tweak &> $s_null #
+  apt-get autoremove -y &> $s_null #
+  # Indicamos al usuario que hemos finalizado las tareas.
   echo "[Tareas finalizadas con éxito]"
+  echo
   # Liberamos Variables.
   s_null=
   current_user=
