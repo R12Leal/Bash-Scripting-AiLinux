@@ -12,7 +12,7 @@ function ailinux(){
   echo "================================================================================"
   # Indicamos al usuario que comenzamos las tareas.
   echo
-  echo "[Realizando tareas, espere un momento por favor...]"
+  echo "[Realizando tareas, espere un momento por favor (No cierre la terminal)...]"
   echo
   echo "Procesos restantes: "$proc
   # Tareas.
