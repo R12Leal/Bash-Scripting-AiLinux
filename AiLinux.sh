@@ -33,25 +33,23 @@ function ailinux(){
   let "proc -= 1"
   echo "Procesos restantes: "$proc
   #
-  apt install rar unace p7zip-full p7zip-rar sharutils mpack arj &> $s_null #
+  apt install rar unace p7zip-full p7zip-rar sharutils mpack arj -y &> $s_null #
   let "proc -= 1"
   echo "Procesos restantes: "$proc
   #
-  apt install synaptic &> $s_null #
+  apt install synaptic -y &> $s_null #
   let "proc -= 1"
   echo "Procesos restantes: "$proc
   #
-  apt install aptitude &> $s_null #
+  apt install aptitude -y &> $s_null #
   let "proc -= 1"
   echo "Procesos restantes: "$proc
   #
-  apt install ubuntu-tweak &> $s_null #
+  apt install ubuntu-tweak -y &> $s_null #
   let "proc -= 1"
   echo "Procesos restantes: "$proc
   #
   apt-get autoremove -y &> $s_null #
-  let "proc -= 1"
-  echo "Procesos restantes: "$proc
   # Indicamos al usuario que hemos finalizado las tareas.
   echo
   echo "[Tareas finalizadas con éxito]"
